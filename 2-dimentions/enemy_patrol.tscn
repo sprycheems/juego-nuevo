@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://brtbyvxcfcijj"]
+
+[ext_resource type="Script" uid="uid://b3hkkyx6vqikm" path="res://enemypatrol.gd" id="1_7gfvu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gfvu"]
+size = Vector2(27.75, 25.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bi54"]
+size = Vector2(41.5, 46.5)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(60, 2)
+collision_layer = 2
+script = ExtResource("1_7gfvu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(120, 74)
+shape = SubResource("RectangleShape2D_7gfvu")
+
+[node name="leftray" type="RayCast2D" parent="."]
+position = Vector2(120, 63)
+target_position = Vector2(-26, 25)
+
+[node name="rightray" type="RayCast2D" parent="."]
+position = Vector2(120, 63)
+target_position = Vector2(26, 25)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(120, 63)
+shape = SubResource("RectangleShape2D_3bi54")
+debug_color = Color(0.893029, 0.0262925, 0.777092, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
