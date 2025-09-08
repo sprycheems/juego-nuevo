@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://epemq6wn3h23"]
+[gd_scene load_steps=5 format=3 uid="uid://epemq6wn3h23"]
 
 [ext_resource type="Script" uid="uid://8702dp1vb0g5" path="res://character_body_2d.gd" id="1_ty1h5"]
+[ext_resource type="Script" uid="uid://rcfx8lnixgn3" path="res://control.gd" id="2_m1hed"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m1hed"]
 radius = 19.0
@@ -28,6 +29,91 @@ shape = SubResource("CapsuleShape2D_m1hed")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_ty1h5")
 debug_color = Color(0.853814, 0.272051, 0.633779, 0.42)
+
+[node name="Control" type="CanvasLayer" parent="."]
+script = ExtResource("2_m1hed")
+
+[node name="Node" type="Node" parent="Control"]
+
+[node name="ColorRect10" type="ColorRect" parent="Control/Node"]
+offset_left = 208.0
+offset_top = 16.0
+offset_right = 240.0
+offset_bottom = 48.0
+scale = Vector2(1.23326, 1.2356)
+color = Color(0.54, 0.54, 0.54, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="Control/Node"]
+offset_left = 160.0
+offset_top = 16.0
+offset_right = 192.0
+offset_bottom = 48.0
+scale = Vector2(1.23326, 1.2356)
+color = Color(0.54, 0.54, 0.54, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="Control/Node"]
+offset_left = 112.0
+offset_top = 16.0
+offset_right = 144.0
+offset_bottom = 48.0
+scale = Vector2(1.23326, 1.2356)
+color = Color(0.54, 0.54, 0.54, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="Control/Node"]
+offset_left = 64.0
+offset_top = 16.0
+offset_right = 96.0
+offset_bottom = 48.0
+scale = Vector2(1.23326, 1.2356)
+color = Color(0.54, 0.54, 0.54, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Control/Node"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(1.23326, 1.2356)
+color = Color(0.54, 0.54, 0.54, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(1.23326, 1.2356)
+color = Color(1, 0.11, 0.11, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control"]
+offset_left = 64.0
+offset_top = 16.0
+offset_right = 96.0
+offset_bottom = 48.0
+scale = Vector2(1.23326, 1.2356)
+color = Color(1, 0.11, 0.11, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control"]
+offset_left = 112.0
+offset_top = 16.0
+offset_right = 144.0
+offset_bottom = 48.0
+scale = Vector2(1.23326, 1.2356)
+color = Color(1, 0.11, 0.11, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Control"]
+offset_left = 160.0
+offset_top = 16.0
+offset_right = 192.0
+offset_bottom = 48.0
+scale = Vector2(1.23326, 1.2356)
+color = Color(1, 0.11, 0.11, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Control"]
+offset_left = 208.0
+offset_top = 16.0
+offset_right = 240.0
+offset_bottom = 48.0
+scale = Vector2(1.23326, 1.2356)
+color = Color(1, 0.11, 0.11, 1)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
